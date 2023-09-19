@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CycleShop</title>
+</head>
+
+<body>
+
+  <div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Brand</th>
+            <th scope="col">isAvailable</th>
+            <th scope="col"> Actions </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cycle of newdata">
+            <td>{{ cycle.id }}</td>
+            <td>{{ cycle.brand }}</td>
+            <td>{{ cycle.availableCycles }}</td>
+            <td><button (click)="getBorrowStatus(cycle)" class="btn btn-rent">Borrow</button>
+
+              <button (click)="getReturnStatus(cycle.id)" class="btn btn-rent">Return</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
+

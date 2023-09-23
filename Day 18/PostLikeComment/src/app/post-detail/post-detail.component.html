@@ -1,0 +1,11 @@
+<div *ngIf="post">
+
+  <h1>Post Details</h1>
+
+  <p><strong>Author:</strong> {{ post.author.name }}</p>
+
+  <p><strong>Title:</strong> {{ post.content }}</p>
+
+  <p><strong>Timestamp:</strong> {{ post.updatedAt | date:'medium' }}</p>
+
+</div>

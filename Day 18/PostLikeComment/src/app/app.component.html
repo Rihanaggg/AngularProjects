@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="card my-5">
+    <div class="card-body">
+
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input type="number" #postId ngModel placeholder="Enter Id" required>
+      </div>
+
+      <button type="submit" (click)="onSubmit(postId.valueAsNumber)" class="btn btn-info">Submit</button>
+
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</body>
+
+</html>

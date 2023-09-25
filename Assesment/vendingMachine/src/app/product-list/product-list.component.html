@@ -1,0 +1,35 @@
+<div>
+<input type="text" [(ngModel)]="productId" placeholder="Enter text">
+  <button (click)="onButtonClick()">Submit</button>
+</div>
+
+<h1>sections</h1>
+<div *ngFor="let sectionItem of section">
+  <h2>{{ sectionItem.name }} Section</h2>
+  <h3>Id: {{sectionItem.id}}</h3>
+  <ul>
+    <li *ngFor="let product of sectionItem.products">
+
+      {{ product.name }} - ${{ product.price }}
+
+      <button (click)="addToCart(product)">Add to Cart</button>
+      <button (click)="removeFromCart(product)">Remove from Cart</button>
+    </li>
+  </ul>
+
+
+</div>
+<div>
+  <button (click)="getSelectedProducts()">Cart</button>
+</div>
+
+<div *ngIf="getSelectedProducts().length > 0" class="selected-products">
+
+  <h2>Selected Products</h2>
+  <ul>
+    <li *ngFor="let product of getSelectedProducts()">
+      <span>{{ product.name }} - ${{ product.price }}</span>
+    </li>
+  </ul>
+  <p>Total: ${{ generateBill() }}</p>
+</div>

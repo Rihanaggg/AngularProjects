@@ -1,0 +1,11 @@
+<div class="notices-list">
+  <h2>Notices List</h2>
+  <ul>
+    <li *ngFor="let notice of notices">
+      <h3>{{ notice.title }}</h3>
+      <p><strong>Content:</strong>{{ notice.content }}</p>
+      <p><strong>Name:</strong> {{ notice.name }}</p>
+      <p><strong>Phone:</strong> {{ notice.phone }}</p>
+    </li>
+  </ul>
+</div>

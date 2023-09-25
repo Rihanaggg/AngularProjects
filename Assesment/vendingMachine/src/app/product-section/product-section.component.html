@@ -1,0 +1,42 @@
+<div *ngIf="selectedSection">
+  <h2>{{ selectedSection.name }} Section</h2>
+  <h3>Id: {{ selectedSection.id }}</h3>
+  <ul>
+    <li *ngFor="let product of selectedSection.products">
+      {{ product.name }} - ${{ product.price }}
+      <button (click)="addToCart(product)">Add to Cart</button>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedProducts.length > 0" class="selected-products">
+  <h2>Selected Products</h2>
+  <ul>
+    <li *ngFor="let product of selectedProducts">
+      <span>{{ product.name }} - ${{ product.price }}</span>
+    </li>
+  </ul>
+  <p>Total: ${{ calculateTotal(selectedProducts) }}</p>
+</div>
+
+
+
+
+
+
+<!-- <div *ngIf="selectedSection">
+  <h2>{{ selectedSection.name }} Section</h2>
+  <h3>Id: {{ selectedSection.id }}</h3>
+  <ul>
+    <li *ngFor="let product of selectedSection.products">
+      {{ product.name }} - ${{ product.price }}
+      <button (click)="addToCart(product)">Add to Cart</button>
+
+    </li>
+  </ul>
+</div> -->
+
+
+
+
+

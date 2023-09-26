@@ -1,0 +1,51 @@
+<div *ngIf="post">
+
+  <h1>Post Details</h1>
+
+  <p><strong>Author:</strong> {{ post.author.name }}</p>
+
+  <p><strong>Title:</strong> {{ post.content }}</p>
+
+  <p><strong>Timestamp:</strong> {{ post.updatedAt | date:'medium' }}</p>
+
+
+
+</div>
+
+<ul>
+  <li *ngFor="let comment of comments">
+    {{ comment.content }}
+    {{comment.user.name}}
+  </li>
+</ul>
+
+<!-- <div>
+  <textarea id="commentContent" #comment ngModel name="content"></textarea>
+  <button (click)="addCommentPart(comment.value)">Add Comment</button>
+</div> -->
+
+<!-- <form (ngSubmit)="addCommentPart(commentForm.content)">
+  <textarea [(ngModel)]="commentForm.content" name="content" id="commentContent"></textarea>
+  <button type="submit">Submit</button>
+</form> -->
+
+
+<form [formGroup]="commentFormg">
+
+  <textarea formControlName="commentText" (input)="onCommentInputChange($event)"></textarea>
+
+  <button type="button" (click)="addCommentPart(commentFormg.get('commentText')?.value)">Comment</button>
+
+</form>
+
+
+<ul *ngIf="showUserSuggestions">
+  <li *ngFor="let user of userSuggestions">
+      <button (click)="insertSuggestion(user)">{{ user.name }}</button>
+  </li>
+</ul>
+
+
+
+
+
